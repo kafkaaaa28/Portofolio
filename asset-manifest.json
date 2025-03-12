@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/portofolio/static/css/main.46814354.css",
+    "main.js": "/portofolio/static/js/main.e9ab8fdd.js",
+    "static/media/kafkaweb.jpg": "/portofolio/static/media/kafkaweb.5ba8aa65c0db98dc152c.jpg",
+    "index.html": "/portofolio/index.html",
+    "main.46814354.css.map": "/portofolio/static/css/main.46814354.css.map",
+    "main.e9ab8fdd.js.map": "/portofolio/static/js/main.e9ab8fdd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46814354.css",
+    "static/js/main.e9ab8fdd.js"
+  ]
+}
