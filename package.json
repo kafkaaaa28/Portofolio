@@ -1,4 +1,5 @@
 {
+  "homepage": "https://kafkaaaa28.github.io/Portofolio",
   "name": "portofolio",
   "version": "0.1.0",
   "private": true,
@@ -17,7 +18,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --host 0.0.0.0",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
