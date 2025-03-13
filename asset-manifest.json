@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Portofolio/static/css/main.f172f3fe.css",
-    "main.js": "/Portofolio/static/js/main.5fd2a5e3.js",
+    "main.css": "/Portofolio/static/css/main.ed5e3d45.css",
+    "main.js": "/Portofolio/static/js/main.a647bd08.js",
     "static/media/kafkaweb.jpg": "/Portofolio/static/media/kafkaweb.5ba8aa65c0db98dc152c.jpg",
     "index.html": "/Portofolio/index.html",
-    "main.f172f3fe.css.map": "/Portofolio/static/css/main.f172f3fe.css.map",
-    "main.5fd2a5e3.js.map": "/Portofolio/static/js/main.5fd2a5e3.js.map"
+    "main.ed5e3d45.css.map": "/Portofolio/static/css/main.ed5e3d45.css.map",
+    "main.a647bd08.js.map": "/Portofolio/static/js/main.a647bd08.js.map"
   },
   "entrypoints": [
-    "static/css/main.f172f3fe.css",
-    "static/js/main.5fd2a5e3.js"
+    "static/css/main.ed5e3d45.css",
+    "static/js/main.a647bd08.js"
   ]
 }
