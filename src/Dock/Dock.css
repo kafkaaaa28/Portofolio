@@ -1,7 +1,7 @@
 .dock-outer {
   margin: 0 0.5rem;
   display: flex;
-  max-width: 100%;
+  width: 100%;
   align-items: center;
 }
 
@@ -12,10 +12,12 @@
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
-  width: fit-content;
-  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+  gap: 2rem;
   border-radius: 1rem;
-  background-color: #060606;
+  background: rgb(135, 135, 135);
+  background: linear-gradient(0deg, rgba(135, 135, 135, 1) 0%, rgba(0, 0, 0, 1) 78%);
   border: 1px solid #222;
   padding: 0 0.5rem 0.5rem;
 }

@@ -1,7 +1,7 @@
 import ScrollReveal from './ScrollReveal';
 const About = () => {
   return (
-    <div className="Container-about">
+    <div className="Container-about" id="About">
       <div className="Container">
         <p className="AboutHeader text-white font-bold">About Me</p>
         <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={5} blurStrength={10}>

@@ -9,17 +9,19 @@ import Timeline from './Timeline/Timeline';
 import { useState, useEffect } from 'react';
 import { IoHomeOutline } from 'react-icons/io5';
 import { FaRegFolderOpen } from 'react-icons/fa';
+import Contact from './Contact/Contact';
 import { VscAccount } from 'react-icons/vsc';
+import Skills from './Skills/Skills';
 import { CiPhone } from 'react-icons/ci';
 import ButtonSee from './Button/ButtonSee';
 function App() {
   const [Block, setBlock] = useState(false);
   const [Mobile, setMobile] = useState(false);
   const items = [
-    { icon: <IoHomeOutline size={18} />, label: 'Home', onClick: () => alert('Home!') },
-    { icon: <VscAccount size={18} />, label: 'Archive', onClick: () => alert('Archive!') },
-    { icon: <FaRegFolderOpen size={18} />, label: 'Profile', onClick: () => alert('Profile!') },
-    { icon: <CiPhone size={18} />, label: 'Settings', onClick: () => alert('Settings!') },
+    { icon: <IoHomeOutline size={18} />, label: 'Home', link: 'Hero' },
+    { icon: <VscAccount size={18} />, label: 'About', link: 'About' },
+    { icon: <FaRegFolderOpen size={18} />, label: 'Skills', link: 'Skills' },
+    { icon: <CiPhone size={18} />, label: 'Contact', link: 'Contact' },
   ];
 
   useEffect(() => {
@@ -61,6 +63,8 @@ function App() {
             <Scrollvelo />
             <About />
             <Timeline />
+            <Skills />
+            <Contact />
             {Mobile ? (
               <>
                 <div className="Dock">

@@ -1,5 +1,5 @@
 'use client';
-
+import { Link } from 'react-scroll';
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
 import { Children, cloneElement, useEffect, useMemo, useRef, useState } from 'react';
 
@@ -68,7 +68,7 @@ function DockIcon({ children, className = '' }) {
   return <div className={`dock-icon ${className}`}>{children}</div>;
 }
 
-export default function Dock({ items, className = '', spring = { mass: 0.1, stiffness: 150, damping: 12 }, magnification = 70, distance = 200, panelHeight = 68, dockHeight = 256, baseItemSize = 50 }) {
+export default function Dock({ link, items, className = '', spring = { mass: 0.1, stiffness: 150, damping: 12 }, magnification = 70, distance = 200, panelHeight = 68, dockHeight = 256, baseItemSize = 50 }) {
   const mouseX = useMotionValue(Infinity);
   const isHovered = useMotionValue(0);
 
@@ -77,7 +77,7 @@ export default function Dock({ items, className = '', spring = { mass: 0.1, stif
   const height = useSpring(heightRow, spring);
 
   return (
-    <motion.div style={{ height, scrollbarWidth: 'none' }} className="dock-outer">
+    <motion.div style={{ height, scrollbarWidth: 'none' }} className="dock-outer ">
       <motion.div
         onMouseMove={({ pageX }) => {
           isHovered.set(1);
@@ -94,7 +94,9 @@ export default function Dock({ items, className = '', spring = { mass: 0.1, stif
       >
         {items.map((item, index) => (
           <DockItem key={index} onClick={item.onClick} className={item.className} mouseX={mouseX} spring={spring} distance={distance} magnification={magnification} baseItemSize={baseItemSize}>
-            <DockIcon>{item.icon}</DockIcon>
+            <DockIcon>
+              <Link to={item.link}>{item.icon}</Link>
+            </DockIcon>
             <DockLabel>{item.label}</DockLabel>
           </DockItem>
         ))}
