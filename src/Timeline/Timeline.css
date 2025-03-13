@@ -10,3 +10,9 @@
     margin-left: 60px;
   }
 }
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    width: 73%;
+    margin-left: 130px;
+  }
+}
