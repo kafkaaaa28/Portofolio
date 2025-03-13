@@ -9,9 +9,7 @@ export default function Bars() {
 
   return (
     <>
-      <div className="flex min-h-[50vh] items-center justify-center">
-        <FaBarsProgress className="text-2xl" onClick={() => setIsOpen(true)} />
-      </div>
+      <FaBarsProgress className="text-2xl" onClick={() => setIsOpen(true)} />
       <Drawer open={isOpen} onClose={handleClose} className="bg-black text-white">
         <Drawer.Header title="Menu" />
         <Drawer.Items>

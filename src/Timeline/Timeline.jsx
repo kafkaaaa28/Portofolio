@@ -1,10 +1,10 @@
 'use client';
 
-import { Button, Timeline } from 'flowbite-react';
+import { Timeline } from 'flowbite-react';
 import './Timeline.css';
 export default function Component() {
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="container flex justify-center items-center">
       <Timeline>
         <Timeline.Item>
           <Timeline.Point />
