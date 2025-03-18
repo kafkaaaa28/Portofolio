@@ -21,7 +21,7 @@ export default function Component() {
         </div>
         <TextInput id="large" type="text" sizing="lg" required />
       </div>
-      <Button className="bg-white text-black" type="submit">
+      <Button className="bg-black text-white border border-white hover:bg-white" type="submit">
         Send
       </Button>
     </form>

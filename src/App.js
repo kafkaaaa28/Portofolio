@@ -1,19 +1,21 @@
 import './App.css';
-import Hero from './Hero/Hero';
-import Navbars from './Navbars/Navbars';
-import About from './About/About';
-import Dock from './Dock/Dock';
-import { HashRouter as Router } from 'react-router-dom';
-import Scrollvelo from './Scroll/Scrollvelo';
-import Timeline from './Timeline/Timeline';
 import { useState, useEffect } from 'react';
+import { HashRouter as Router } from 'react-router-dom';
 import { IoHomeOutline } from 'react-icons/io5';
 import { FaRegFolderOpen } from 'react-icons/fa';
-import Contact from './Contact/Contact';
 import { VscAccount } from 'react-icons/vsc';
-import Skills from './Skills/Skills';
 import { CiPhone } from 'react-icons/ci';
 import ButtonSee from './Button/ButtonSee';
+import ScrollLinked from './Scroll/Scroll-indicator';
+import Navbars from './Navbars/Navbars';
+import Hero from './Hero/Hero';
+import About from './About/About';
+import Scrollvelo from './Scroll/Scrollvelo';
+import Timeline from './Timeline/Timeline';
+import Skills from './Skills/Skills';
+import Contact from './Contact/Contact';
+
+import Dock from './Dock/Dock';
 function App() {
   const [Block, setBlock] = useState(false);
   const [Mobile, setMobile] = useState(false);
@@ -58,6 +60,7 @@ function App() {
         </div>
         {Block ? (
           <>
+            <ScrollLinked />
             <Navbars />
             <Hero />
             <Scrollvelo />
