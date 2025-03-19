@@ -16,7 +16,7 @@ export default function Bars() {
   return (
     <>
       <FaBarsProgress className="text-2xl" onClick={() => setIsOpen(true)} />
-      <Drawer open={isOpen} onClose={handleClose} className="Container-Menu bg-black text-white">
+      <Drawer open={isOpen} onClose={handleClose} className=" bg-black text-white">
         <Drawer.Header title="Menu" />
         <Drawer.Items>
           <div style={{ height: '600px', position: 'relative' }}>

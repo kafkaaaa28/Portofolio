@@ -4,7 +4,7 @@ import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 
 export default function Component() {
   return (
-    <form className="flex max-w-md Forms flex-col gap-4">
+    <form className="flex max-w-md w-[70%] sm:w-full mb-[100px] flex-col gap-4">
       <div className="w-full ">
         <div className="mb-2 block text-white">
           <FloatingLabel variant="standard" className="text-white" label="Email" required />

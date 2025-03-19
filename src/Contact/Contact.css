@@ -9,22 +9,7 @@
   transform: scale(1);
   transform-origin: center;
 }
-.Forms {
-  width: 100%;
-}
-.Container-Contact {
-  display: flex;
-}
-.container-media {
-  width: 50%;
-  justify-content: center;
-  align-items: center;
-}
-.media {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -165,22 +150,16 @@
     height: 60vh;
     justify-content: center;
   }
-  .Container-Contact {
-    display: flex;
-    flex-direction: column;
-  }
-  .container-media {
-    width: 100%;
-  }
+
   .media {
     width: 100%;
   }
   .main {
     margin-bottom: 40px;
   }
-  .Forms {
-    width: 70%;
-    margin-left: 70px;
-    margin-bottom: 100px;
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  .lanyard-wrapper {
+    height: 70vh;
   }
 }

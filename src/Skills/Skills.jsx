@@ -15,9 +15,9 @@ const Skills = () => {
   ];
   return (
     <>
-      <div className="container-skills">
-        <h1 className="Myskills text-white font-bold">My Skills</h1>
-        <div className="Skills">
+      <div className="h-[70vh] sm:h-[40vh] lg:h-[60vh] flex items-center flex-col mt-[100px] ">
+        <h1 className="text-[30px] sm:text-[50px] text-white font-bold">My Skills</h1>
+        <div className="flex w-full sm:w-[70%]">
           <GlassIcons items={items} className="custom-class " />
         </div>
       </div>

@@ -2,11 +2,14 @@ import './Contact.css';
 import { FaWhatsapp, FaGithub, FaInstagram } from 'react-icons/fa';
 
 const Link = () => {
+  const Number = '62895342305487';
+  const message = 'Hai Kafkaaa';
+  const waLink = `https://wa.me/${Number}?text=${encodeURIComponent(message)}`;
   return (
     <>
       <div class="main">
         <div class="up">
-          <a href="https://wa.me/62895342305487" target="_blank">
+          <a href={waLink} target="_blank">
             <button class="card1">
               <FaWhatsapp className="whatsapp" />
             </button>

@@ -94,41 +94,20 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.container-skills {
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 100px;
-}
-.Skills {
-  width: 100%;
-  display: flex;
-}
+
 .container-icons {
   display: grid;
   column-gap: 150px;
   grid-template-columns: repeat(4, 1fr);
 }
-.Myskills {
-  font-size: 50px;
-}
+
 @media (max-width: 640px) {
-  .container-skills {
-    margin-top: 50px;
-  }
   .container-icons {
     column-gap: 40px;
     grid-template-columns: repeat(3, 1fr);
   }
-  .Myskills {
-    font-size: 30px;
-  }
 }
 @media (min-width: 641px) and (max-width: 1024px) {
-  .Skills {
-    width: 70%;
-  }
   .container-icons {
     column-gap: 90px;
   }
