@@ -2,7 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { IoHomeOutline } from 'react-icons/io5';
-import { FaGithub, FaRegFolderOpen } from 'react-icons/fa';
+import { FaRegFolderOpen } from 'react-icons/fa';
 import { VscAccount } from 'react-icons/vsc';
 import { CiPhone } from 'react-icons/ci';
 import ButtonSee from './Button/ButtonSee';

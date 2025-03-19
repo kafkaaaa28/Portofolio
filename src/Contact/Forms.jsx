@@ -1,6 +1,6 @@
 'use client';
 import { FloatingLabel } from 'flowbite-react';
-import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
+import { Button, Label, TextInput } from 'flowbite-react';
 
 export default function Component() {
   return (
@@ -17,9 +17,8 @@ export default function Component() {
       </div>
       <div>
         <div className="mb-2 block">
-          <Label htmlFor="large" className="text-white" value="Message" />
+          <FloatingLabel variant="standard" className="text-white" label="Massage" required />
         </div>
-        <TextInput id="large" type="text" sizing="lg" required />
       </div>
       <Button className="bg-black text-white border border-white hover:bg-white" type="submit">
         Send
