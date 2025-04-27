@@ -8,7 +8,7 @@ const GithubContributions = ({ username }) => {
 
   useEffect(() => {
     console.log('Token:', process.env.REACT_APP_GITHUB_TOKEN);
-
+    console.log(username);
     const fetchContributions = async () => {
       try {
         const token = process.env.REACT_APP_GITHUB_TOKEN;
@@ -16,21 +16,21 @@ const GithubContributions = ({ username }) => {
           'https://api.github.com/graphql',
           {
             query: `
-              query {
-                user(login: "${username}") {
-                  contributionsCollection {
-                    contributionCalendar {
-                      weeks {
-                        contributionDays {
-                          date
-                          contributionCount
-                        }
+            query {
+              viewer {
+                contributionsCollection {
+                  contributionCalendar {
+                    weeks {
+                      contributionDays {
+                        date
+                        contributionCount
                       }
                     }
                   }
                 }
               }
-            `,
+            }
+          `,
           },
           {
             headers: {
@@ -42,8 +42,13 @@ const GithubContributions = ({ username }) => {
         if (response.data.errors) {
           throw new Error(response.data.errors[0].message);
         }
+        const viewer = response.data.data?.viewer;
 
-        const data = response.data.data.user.contributionsCollection.contributionCalendar.weeks;
+        if (!viewer || !viewer.contributionsCollection) {
+          throw new Error('Data kontribusi tidak tersedia.');
+        }
+
+        const data = viewer.contributionsCollection.contributionCalendar.weeks;
         setContributions(data);
       } catch (error) {
         console.error('Error fetching GitHub contributions:', error);
