@@ -35,7 +35,7 @@ function App() {
     { icon: <CiPhone size={18} />, label: 'Contact', link: 'Contact' },
   ];
   useEffect(() => {
-    // ambil data
+    // ambil data user
     const checkAuth = async () => {
       try {
         const token = localStorage.getItem('token');
