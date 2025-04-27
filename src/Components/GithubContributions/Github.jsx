@@ -9,10 +9,6 @@ const GithubContributions = ({ username }) => {
     const fetchContributions = async () => {
       try {
         const token = process.env.REACT_APP_GITHUB_TOKEN;
-<<<<<<< HEAD
-=======
-        console.log(token);
->>>>>>> 9585229 (remove token)
         const response = await axios.post(
           'https://api.github.com/graphql',
           {
