@@ -7,8 +7,6 @@ const GithubContributions = ({ username }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log('Token:', process.env.REACT_APP_GITHUB_TOKEN);
-    console.log(username);
     const fetchContributions = async () => {
       try {
         const token = process.env.REACT_APP_GITHUB_TOKEN;

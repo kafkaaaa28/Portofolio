@@ -32,7 +32,6 @@ function App() {
     { icon: <FaRegFolderOpen size={18} />, label: 'Skills', link: 'Skills' },
     { icon: <CiPhone size={18} />, label: 'Contact', link: 'Contact' },
   ];
-
   useEffect(() => {
     // ambil data
     const checkAuth = async () => {
