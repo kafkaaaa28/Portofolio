@@ -34,6 +34,7 @@ function App() {
   ];
 
   useEffect(() => {
+    // ambil data
     const checkAuth = async () => {
       try {
         const token = localStorage.getItem('token');
