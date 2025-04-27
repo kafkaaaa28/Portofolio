@@ -17,12 +17,19 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (res) => res,
   (err) => {
-    if (err.response?.status === 401) {
-      localStorage.removeItem('token');
-      window.location.href = '/login';
+    if (err.response?.status === 401 && !localStorage.getItem('token')) {
+      console.log('Token tidak ada atau kadaluarsa');
+
+      return Promise.reject(err);
     }
-    return Promise.reject(err);
+
+    if (err.response?.status === 401) {
+      console.log('Token mungkin kadaluarsa atau tidak valid');
+    }
+
+    return Promise.reject(err); // Teruskan error
   }
 );
+
 
 export default api;
