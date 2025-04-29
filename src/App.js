@@ -5,14 +5,18 @@ import { IoHomeOutline } from 'react-icons/io5';
 import { FaRegFolderOpen } from 'react-icons/fa';
 import { VscAccount } from 'react-icons/vsc';
 import { CiPhone } from 'react-icons/ci';
+<<<<<<< HEAD
 import ButtonSee from './Components/Button/ButtonSee';
 import ScrollVelocity from './Components/Scroll/ComentScroll';
 import Cardkomen from './Components/Scroll/Cardkomen';
+=======
+>>>>>>> b820923 (add komen)
 import ScrollLinked from './Components/Scroll/Scroll-indicator';
 import Navbars from './Components/Navbars/Navbars';
 import Login from './Components/Login/Login';
 import Hero from './Components/Hero/Hero';
 import About from './Components/About/About';
+import ScrollVelocity from './Components/Scroll/ComentScroll';
 import Scrollvelo from './Components/Scroll/Scrollvelo';
 import Timeline from './Components/Timeline/Timeline';
 import Skills from './Components/Skills/Skills';
@@ -21,6 +25,7 @@ import Contact from './Components/Contact/Contact';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Dock from './Components/Dock/Dock';
 import api from './utils/api';
+import Cardkoment from './Components/Scroll/Cardkomen';
 
 function App() {
   const [block, setBlock] = useState(false);
@@ -97,7 +102,9 @@ function App() {
                 <Skills />
                 <GithubContributions />
                 <Contact />
+
                 <ScrollVelocity texts={[<Cardkomen />, <Cardkomen />]} velocity={'50'} className=" font-normal leading-normal tracking-normal text-start" />
+
 
                 {mobile && (
                   <div className="Dock">
