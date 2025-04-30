@@ -6,6 +6,8 @@ import { FaRegFolderOpen } from 'react-icons/fa';
 import { VscAccount } from 'react-icons/vsc';
 import { CiPhone } from 'react-icons/ci';
 import ButtonSee from './Components/Button/ButtonSee';
+import ScrollVelocity from './Components/Scroll/ComentScroll';
+import Cardkomen from './Components/Scroll/Cardkomen';
 import ScrollLinked from './Components/Scroll/Scroll-indicator';
 import Navbars from './Components/Navbars/Navbars';
 import Login from './Components/Login/Login';
@@ -95,6 +97,7 @@ function App() {
                 <Skills />
                 <GithubContributions />
                 <Contact />
+                <ScrollVelocity texts={[<Cardkomen />, <Cardkomen />]} velocity={'50'} className=" font-normal leading-normal tracking-normal text-start" />
 
                 {mobile && (
                   <div className="Dock">

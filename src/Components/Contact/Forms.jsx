@@ -32,8 +32,8 @@ export default function Component() {
   };
   return (
     <>
-      <p className="text-white text-[20px] mb-[10px]">Send me a Message!!!</p>
-      <form onSubmit={onSubmit} className="flex max-w-md w-[70%] sm:w-full mb-[100px] flex-col gap-4">
+      {/* <p className="text-white text-[20px] mb-[10px]">Send me a Message!!!</p> */}
+      <form onSubmit={onSubmit} className="flex max-w-md w-full sm:w-[50%] mb-[50px] flex-col gap-4">
         <div className="w-full ">
           <div class="relative z-0 w-full mb-5 group">
             <input

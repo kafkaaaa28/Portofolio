@@ -11,6 +11,8 @@ const Dashboard = ({ setIsAuthenticated, setUser }) => {
   const [Open, setOpen] = useState(false);
   const [error, setError] = useState('');
   const [users, setUsers] = useState([]);
+  const [coment, setComent] = useState([]);
+  const [totalcoment, settotalComent] = useState(0);
   const [totalpesan, settotalPesan] = useState(0);
   const [loading, setLoading] = useState(true);
   const Toggler = () => {
@@ -28,6 +30,18 @@ const Dashboard = ({ setIsAuthenticated, setUser }) => {
         setLoading(false);
       }
     };
+    const getComent = async () => {
+      try {
+        const res = await api.get('/coment/get');
+        setComent(res.data.data);
+        settotalComent(res.data.data.length);
+        setLoading(false);
+      } catch (err) {
+        setError(err.response?.data?.message || 'gagal ambil coment');
+        setLoading(false);
+      }
+    };
+    getComent();
     getAll();
   }, []);
 
@@ -116,11 +130,20 @@ const Dashboard = ({ setIsAuthenticated, setUser }) => {
           <div className={`bg-white w-[full] h-[100px] mr-[20px] ml-[20px] md:ml-[270px] mt-[20px] rounded-lg flex justify-center items-center`}>
             <p className="text-[20px] font-bold">Welcome Back Kafka!!</p>
           </div>
-          <div className={`bg-white w-[full] h-[100px] mr-[20px] ml-[20px] md:ml-[270px] mt-[20px] rounded-lg flex flex-col  justify-center items-center`}>
-            <p className="text-[20px] font-bold">TOTAL PESAN</p>
-            <div className="flex gap-2 ">
-              <IoMdMailUnread className="text-[20px] mt-[5px]" />
-              <p className="text-[20px] font-bold">{totalpesan}</p>
+          <div className="flex flex-col md:flex-row w-full">
+            <div className={`bg-white w-[350px] h-[100px]  lg:w-[50%] mr-[20px] ml-[20px] md:ml-[270px] mt-[20px] rounded-lg flex flex-col  justify-center items-center`}>
+              <p className="text-[20px] font-bold">TOTAL PESAN</p>
+              <div className="flex gap-2 ">
+                <IoMdMailUnread className="text-[20px] mt-[5px]" />
+                <p className="text-[20px] font-bold">{totalpesan}</p>
+              </div>
+            </div>
+            <div className={`bg-white w-[350px] h-[100px] mr-[20px] ml-[20px] lg:w-[50%]  mt-[20px] rounded-lg flex flex-col  justify-center items-center`}>
+              <p className="text-[20px] font-bold">TOTAL Coment</p>
+              <div className="flex gap-2 ">
+                <IoMdMailUnread className="text-[20px] mt-[5px]" />
+                <p className="text-[20px] font-bold">{totalcoment}</p>
+              </div>
             </div>
           </div>
           <div className="mr-[20px] ml-[20px] mt-[20px] md:ml-[270px]">
@@ -136,7 +159,10 @@ const Dashboard = ({ setIsAuthenticated, setUser }) => {
                     </th>
                     <th scope="col" className="px-6 py-3">
                       pesan
-                    </th>{' '}
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Tanggal
+                    </th>
                     <th scope="col" className="px-6 py-3">
                       aksi
                     </th>
@@ -150,7 +176,49 @@ const Dashboard = ({ setIsAuthenticated, setUser }) => {
                       </th>
                       <td className="px-6 py-4">{user.email}</td>
                       <td className="px-6 py-4">{user.massage}</td>
+                      <td className="px-6 py-4">{user.created_at}</td>
                       <button type="button" onClick={() => handledelete(user.id)} class="text-white flex bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none ">
+                        <MdOutlineDelete className="text-[17px]" />
+                      </button>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          {/*  */}
+          <div className="mr-[20px] ml-[20px] mt-[20px] md:ml-[270px]">
+            <div className="relative overflow-x-auto">
+              <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" className="px-6 py-3">
+                      nama
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      pesan
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Tanggal
+                    </th>{' '}
+                    <th scope="col" className="px-6 py-3">
+                      aksi
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {coment.map((komen) => (
+                    <tr key={komen.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+                      <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {komen.name}
+                      </th>
+                      <td className="px-6 py-4">{komen.coment}</td>
+                      <td className="px-6 py-4">{komen.created_at}</td>
+                      <button
+                        type="button"
+                        onClick={() => handledelete(komen.id)}
+                        class="text-white flex bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none "
+                      >
                         <MdOutlineDelete className="text-[17px]" />
                       </button>
                     </tr>

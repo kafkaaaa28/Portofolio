@@ -1,6 +1,10 @@
 import axios from 'axios';
 
 const api = axios.create({ baseURL: 'https://backend-porto-production-a4eb.up.railway.app/api', withCredentials: true });
+// const api = axios.create({
+//   baseURL: 'http://localhost:8080/api',
+//   withCredentials: true,
+// });
 
 api.interceptors.request.use(
   (config) => {
@@ -30,6 +34,5 @@ api.interceptors.response.use(
     return Promise.reject(err); // Teruskan error
   }
 );
-
 
 export default api;
