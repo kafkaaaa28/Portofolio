@@ -2,15 +2,14 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { IoHomeOutline } from 'react-icons/io5';
-import { FaRegFolderOpen } from 'react-icons/fa';
 import { VscAccount } from 'react-icons/vsc';
 import { CiPhone } from 'react-icons/ci';
+import { GiPointySword } from 'react-icons/gi';
 import ScrollLinked from './Components/Scroll/Scroll-indicator';
 import Navbars from './Components/Navbars/Navbars';
 import Login from './Components/Login/Login';
 import Hero from './Components/Hero/Hero';
 import About from './Components/About/About';
-import Komenscroll from './Components/Scroll/ComentScroll';
 import Scrollvelo from './Components/Scroll/Scrollvelo';
 import Timeline from './Components/Timeline/Timeline';
 import Skills from './Components/Skills/Skills';
@@ -19,8 +18,7 @@ import Contact from './Components/Contact/Contact';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Dock from './Components/Dock/Dock';
 import api from './utils/api';
-import Cardkoment from './Components/Scroll/Cardkomen';
-
+import Komenscrol from './Components/Scroll/Komenscrol';
 function App() {
   const [block, setBlock] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,7 +28,7 @@ function App() {
   const items = [
     { icon: <IoHomeOutline size={18} />, label: 'Home', link: 'Hero' },
     { icon: <VscAccount size={18} />, label: 'About', link: 'About' },
-    { icon: <FaRegFolderOpen size={18} />, label: 'Skills', link: 'Skills' },
+    { icon: <GiPointySword size={18} />, label: 'Skills', link: 'Skills' },
     { icon: <CiPhone size={18} />, label: 'Contact', link: 'Contact' },
   ];
   useEffect(() => {
@@ -96,9 +94,7 @@ function App() {
                 <Skills />
                 <GithubContributions />
                 <Contact />
-
-                <Komenscroll texts={[<Cardkoment />, <Cardkoment />]} velocity={'50'} className=" font-normal leading-normal tracking-normal text-start" />
-
+                <Komenscrol />
                 {mobile && (
                   <div className="Dock">
                     <Dock items={items} panelHeight={68} baseItemSize={50} magnification={70} />
