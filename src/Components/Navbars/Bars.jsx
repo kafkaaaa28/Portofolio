@@ -15,7 +15,9 @@ export default function Bars() {
 
   return (
     <>
-      <FaBarsProgress className="text-2xl" onClick={() => setIsOpen(true)} />
+      <div className="cursor-pointer hover:text-black hover:bg-white h-[45px] rounded-lg transition-colors p-[10px]">
+        <FaBarsProgress className="text-2xl " onClick={() => setIsOpen(true)} />
+      </div>
       <Drawer open={isOpen} onClose={handleClose} className=" bg-black text-white">
         <Drawer.Header title="Menu" />
         <Drawer.Items>
