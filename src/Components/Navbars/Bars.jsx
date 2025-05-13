@@ -9,7 +9,8 @@ export default function Bars() {
     { link: 'Skills', text: 'Skills', image: 'https://i.pinimg.com/736x/81/ee/dc/81eedc907a19f1669d3d8451db32b42c.jpg' },
     { link: 'Contact', text: 'Contact', image: 'https://i.pinimg.com/474x/dd/7d/97/dd7d973f3eaa5cc38ffa0af6d6fb23ec.jpg' },
   ];
-  const [isOpen, setIsOpen] = useState(false); // Mengubah nilai awal menjadi false
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => setIsOpen(false);
 

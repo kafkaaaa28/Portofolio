@@ -17,6 +17,7 @@ import GithubContributions from './Components/GithubContributions/GithubContribu
 import Contact from './Components/Contact/Contact';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Dock from './Components/Dock/Dock';
+import ComentPage from './Components/Coments/ComentPage';
 import api from './utils/api';
 import Komenscrol from './Components/Scroll/Komenscrol';
 function App() {
@@ -78,8 +79,17 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} />
+        <Route path="/login" element={!isAuthenticated ? <Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} /> : <Navigate to={`/dashboard`} />} />
         <Route path="/dashboard" element={isAuthenticated ? <Dashboard setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user} /> : <Navigate to={'/'} />} />
+        <Route
+          path="/coments"
+          element={
+            <>
+              <Navbars setIsAuthenticated={setIsAuthenticated} setUser={setUser} isAuthenticated={isAuthenticated} />
+              <ComentPage />
+            </>
+          }
+        />
         <Route
           path="/"
           element={

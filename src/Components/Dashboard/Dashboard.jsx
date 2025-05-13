@@ -69,6 +69,14 @@ const Dashboard = ({ setIsAuthenticated, setUser }) => {
       setError(err.res?.data?.massage || 'failed delete message');
     }
   };
+  const Deletecoment = async (id) => {
+    try {
+      const res = api.delete(`/coment/${id}`);
+      setComent(coment.filter((komen) => komen.id !== id));
+    } catch (err) {
+      setError(err.res?.data?.massage || 'failed delete coment');
+    }
+  };
 
   if (loading) return <div>Loading....</div>;
   return (
@@ -216,7 +224,7 @@ const Dashboard = ({ setIsAuthenticated, setUser }) => {
                       <td className="px-6 py-4">{komen.created_at}</td>
                       <button
                         type="button"
-                        onClick={() => handledelete(komen.id)}
+                        onClick={() => Deletecoment(komen.id)}
                         class="text-white flex bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none "
                       >
                         <MdOutlineDelete className="text-[17px]" />

@@ -5,7 +5,7 @@ import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io';
 import { Button, Modal, ModalBody, ModalHeader } from 'flowbite-react';
 
-const Coments = () => {
+const Coments = ({ closemodal }) => {
   const [openModal, setOpenModal] = useState(false);
   const [error, setError] = useState('');
   const [pesan, setPesan] = useState('');
@@ -24,6 +24,7 @@ const Coments = () => {
       setPesan(res.data.message || 'Kamu berhasil Coments Refresh halaman untuk melihat');
       setOpenModal(true);
       setformData({ name: '', coment: '' });
+      closemodal(true);
     } catch (err) {
       console.log(err);
       setError(err.response?.data?.message || 'gagal Coments');
@@ -33,42 +34,35 @@ const Coments = () => {
 
   return (
     <>
-      <form onSubmit={onSubmit} class="flex max-w-md w-full md:w-[40%] mb-[50px] flex-col gap-4">
-        <div class="relative z-0 w-full mb-5 group">
+      <form onSubmit={onSubmit} class="flex max-w-md w-full  mb-[50px] flex-col gap-4">
+        <div>
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            Name
+          </label>
           <input
             type="text"
             name="name"
             onChange={onChange}
             value={name}
-            class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            placeholder="kafkaa"
             required
           />
-          <label
-            for="floating_email"
-            class="peer-focus:font-medium absolute text-sm text-white dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >
-            Name
-          </label>
         </div>
-        <div class="relative z-0 w-full mb-5 group">
+        <div>
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            Coments
+          </label>
           <input
             type="text"
             name="coment"
             onChange={onChange}
             value={coment}
-            class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
             required
           />
-          <label
-            for="floating_password"
-            class="peer-focus:font-medium absolute text-sm text-white dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >
-            Comments
-          </label>
         </div>
-        <button className="bg-black text-white border border-white hover:bg-white hover:text-black rounded-lg" type="submit">
+        <button className="bg-black mt-[20px] text-white border border-white hover:bg-white hover:border-black hover:text-black rounded-lg" type="submit">
           Send
         </button>
       </form>
