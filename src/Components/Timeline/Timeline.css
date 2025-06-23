@@ -1,18 +1,18 @@
-.Timeline {
-  margin-left: 20px;
+.parallaxTimeline {
+  position: relative;
+  overflow: hidden;
 }
-.container {
-  width: 100%;
+.bg-gradient {
+  background: #121414;
+  background: linear-gradient(90deg, rgba(18, 20, 20, 1) 0%, rgba(69, 77, 74, 1) 50%, rgba(82, 82, 82, 1) 100%);
 }
-@media (max-width: 640px) {
-  .container {
-    width: 70%;
-    margin-left: 60px;
-  }
-}
-@media (min-width: 641px) and (max-width: 1024px) {
-  .container {
-    width: 73%;
-    margin-left: 130px;
-  }
+.scrollerTimeline {
+  display: flex;
+  white-space: nowrap;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 2.25rem;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
 }

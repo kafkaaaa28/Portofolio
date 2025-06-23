@@ -3,24 +3,24 @@ import './Github.css';
 import StarBorder from './Starborder';
 const GithubContributions = () => {
   return (
-    <div className=" flex justify-center items-center mb-[40px] h-[150px] w-[390px] sm:w-full">
+    <div className=" flex justify-center items-center mb-[40px] h-[150px] my-[30px]  w-[390px] sm:w-full">
       <StarBorder as="button" className="" color="cyan" speed="1s">
         <div className="bg-[#28272A] rounded-lg h-[150px] w-[360px] sm:w-[750px] overflow-x-auto wrapper ">
           <div className="w-[705px] mt-[13px]">
             <div className="flex">
-              <p className="text-white text-[10px] ml-[65px]">May</p>
-              <p className="text-white text-[10px] ml-[15px]">Jun</p>
-              <p className="text-white text-[10px] ml-[40px]">Jul</p>
-              <p className="text-white text-[10px] ml-[35px]">Aug</p>
-              <p className="text-white text-[10px] ml-[25px]">Sep</p>
-              <p className="text-white text-[10px] ml-[40px]">Oct</p>
-              <p className="text-white text-[10px] ml-[35px]">Nov</p>
-              <p className="text-white text-[10px] ml-[30px]">Dec</p>
-              <p className="text-white text-[10px] ml-[40px]">Jan</p>
-              <p className="text-white text-[10px] ml-[30px]">Feb</p>
+              <p className="text-white text-[10px] ml-[65px]">Jun</p>
+              <p className="text-white text-[10px] ml-[15px]">Jul</p>
+              <p className="text-white text-[10px] ml-[40px]">Aug</p>
+              <p className="text-white text-[10px] ml-[35px]">Sep</p>
+              <p className="text-white text-[10px] ml-[25px]">Oct</p>
+              <p className="text-white text-[10px] ml-[40px]">Nov</p>
+              <p className="text-white text-[10px] ml-[35px]">Dec</p>
+              <p className="text-white text-[10px] ml-[30px]">Jan</p>
+              <p className="text-white text-[10px] ml-[40px]">Feb</p>
               <p className="text-white text-[10px] ml-[30px]">Mar</p>
-              <p className="text-white text-[10px] ml-[40px]">Apr</p>
-              <p className="text-white text-[10px] ml-[30px]">May</p>
+              <p className="text-white text-[10px] ml-[30px]">Apr</p>
+              <p className="text-white text-[10px] ml-[40px]">May</p>
+              <p className="text-white text-[10px] ml-[30px]">Jun</p>
             </div>
             <div className="flex">
               <div className="flex flex-col ml-[20px] mr-[20px] gap-[15px]">
