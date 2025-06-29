@@ -1,8 +1,8 @@
 import React from 'react';
 import { gsap } from 'gsap';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import './Navbars.css';
-
 function FlowingMenu({ items = [] }) {
   return (
     <div className="menu-wrap">
@@ -19,7 +19,7 @@ function MenuItem({ link, text, image }) {
   const itemRef = React.useRef(null);
   const marqueeRef = React.useRef(null);
   const marqueeInnerRef = React.useRef(null);
-
+  const isRouteLink = link.startsWith('/');
   const animationDefaults = { duration: 0.6, ease: 'expo' };
 
   const findClosestEdge = (mouseX, mouseY, width, height) => {
@@ -69,10 +69,16 @@ function MenuItem({ link, text, image }) {
   ));
 
   return (
-    <div className="menu__item" ref={itemRef}>
-      <Link className="menu__item-link" to={link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        {text}
-      </Link>
+    <div className=" menu__item " ref={itemRef}>
+      {isRouteLink ? (
+        <Link className="menu__item-link" to={link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          {text}
+        </Link>
+      ) : (
+        <ScrollLink className="menu__item-link" to={link} smooth duration={500} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          {text}
+        </ScrollLink>
+      )}
       <div className="marquee" ref={marqueeRef}>
         <div className="marquee__inner-wrap" ref={marqueeInnerRef}>
           <div className="marquee__inner" aria-hidden="true">

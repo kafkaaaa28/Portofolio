@@ -6,6 +6,7 @@ export default function ScrollLinked() {
   return (
     <>
       <motion.div
+        className="z-50"
         id="scroll-indicator"
         style={{
           scaleX: scrollYProgress,

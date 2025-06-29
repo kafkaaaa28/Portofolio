@@ -19,7 +19,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Dock from './Components/Dock/Dock';
 import ComentPage from './Components/Coments/ComentPage';
 import api from './utils/api';
-import Komenscrol from './Components/Scroll/Komenscrol';
+import ScrollSkillpage from './Components/SkillsScroll/ScrollSkillpage';
 function App() {
   const [block, setBlock] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -33,7 +33,6 @@ function App() {
     { icon: <CiPhone size={18} />, label: 'Contact', link: 'Contact' },
   ];
   useEffect(() => {
-    // ambil data user
     const checkAuth = async () => {
       try {
         const token = localStorage.getItem('token');
@@ -104,7 +103,7 @@ function App() {
                 <Skills />
                 <GithubContributions />
                 <Contact />
-                <Komenscrol />
+                <ScrollSkillpage />
                 {mobile && (
                   <div className="Dock">
                     <Dock items={items} panelHeight={68} baseItemSize={50} magnification={70} />

@@ -42,11 +42,11 @@ export default function Navbars({ setIsAuthenticated, setUser, isAuthenticated }
   };
   return (
     <>
-      <Navbar fluid className="nav bg-black text-white">
-        <div className="w-full nav-wrap flex justify-between">
+      <Navbar fluid className="fixed z-40 w-full bg-black text-white">
+        <div className=" w-full mt-[20px]  flex justify-between">
           <Link to={'/'}>
             <Navbar.Brand>
-              <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">Kafka</span>
+              <span className="text-2xl font-semibold dark:text-white">Kafka</span>
             </Navbar.Brand>
           </Link>
           <div className="flex gap-5">
@@ -63,13 +63,7 @@ export default function Navbars({ setIsAuthenticated, setUser, isAuthenticated }
                   <p>Dashboard</p>
                 </Link>
               </>
-            ) : (
-              <Link to={'/login'}>
-                <button type="button" className="text-black bg-white hover:bg-black hover:text-white border hover:ring-white hover:border-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">
-                  Login
-                </button>
-              </Link>
-            )}
+            ) : null}
             {islocation ? <FaRegQuestionCircle className="text-[30px] cursor-pointer" onClick={() => setOpenModal(true)} /> : <Bars />}
           </div>
         </div>

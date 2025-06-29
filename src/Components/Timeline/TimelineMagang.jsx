@@ -25,7 +25,7 @@ export default function Component() {
         </Timeline.Item>
       </Timeline>
       <a href="https://radnet-digital.id/" target="_blank" rel="noopener noreferrer" className="flex justify-center mb-4 cursor-pointer">
-        <img src={Radnet} alt="radnet" className="w-[120px] h-[90px] lg:w-[170px] transition-transform duration-300 hover:scale-110" />
+        <img src={Radnet} alt="radnet" className="w-[135px] h-[90px] lg:w-[170px] transition-transform duration-300 hover:scale-110" />
       </a>
     </div>
   );

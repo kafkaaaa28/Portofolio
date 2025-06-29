@@ -1,4 +1,3 @@
-'use client';
 import { Link } from 'react-scroll';
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
 import { Children, cloneElement, useEffect, useMemo, useRef, useState } from 'react';

@@ -1,6 +1,6 @@
 import { useRef, useLayoutEffect, useState } from 'react';
 import { motion, useScroll, useSpring, useTransform, useMotionValue, useVelocity, useAnimationFrame } from 'framer-motion';
-import './ScrollVelocity.css';
+import './SkillsScroll.css';
 
 function useElementWidth(ref) {
   const [width, setWidth] = useState(0);
@@ -28,8 +28,8 @@ export const ScrollVelocity = ({
   stiffness = 400,
   numCopies = 6,
   velocityMapping = { input: [0, 1000], output: [0, 5] },
-  parallaxClassName = 'parallaxs',
-  scrollerClassName = 'scrollers',
+  parallaxClassName = 'parallaxx',
+  scrollerClassName = 'scrollerr',
   parallaxStyle,
   scrollerStyle,
 }) => {
