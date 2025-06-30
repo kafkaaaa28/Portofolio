@@ -15,10 +15,9 @@ const Contact = () => {
           </div>
           <div className="w-[70%] md:w-full flex flex-col justify-center items-center">
             <Forms />
-            {/* sedang diperbaiki */}
-            {/* <div className="w-full mb-[50px] flex justify-center items-center">
+            <div className="w-full mb-[50px]  flex justify-center items-center">
               <Link to={'/coments'}>
-                <button class="cssbuttons-io-button">
+                <button class="cssbuttons-io-button ">
                   Coments
                   <div class="icon">
                     <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +27,7 @@ const Contact = () => {
                   </div>
                 </button>
               </Link>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

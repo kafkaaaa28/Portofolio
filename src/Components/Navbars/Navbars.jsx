@@ -76,7 +76,9 @@ export default function Navbars({ setIsAuthenticated, setUser, isAuthenticated }
           </div>
         </ModalBody>
         <ModalFooter>
-          <Button onClick={() => setOpenModal(false)}>I accept</Button>
+          <button className="bg-black mt-[20px] text-white border border-white hover:bg-white w-full py-2 hover:border-black hover:text-black rounded-lg" onClick={() => setOpenModal(false)}>
+            I accept
+          </button>
         </ModalFooter>
       </Modal>
     </>

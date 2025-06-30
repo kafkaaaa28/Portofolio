@@ -33,7 +33,7 @@ const ComentPage = () => {
   return (
     <>
       <div className="min-h-[120vh]  overflow-hidden">
-        <div className="w-full flex mt-[30px] flex-col justify-center items-center">
+        <div className="w-full flex mt-[60px] md:mt-[30px] flex-col justify-center items-center">
           <button onClick={() => setModalState('opening')} className="cursor-pointer">
             <Glitch speed={1} enableShadows={true} enableOnHover={true} className="custom-class">
               Comments
