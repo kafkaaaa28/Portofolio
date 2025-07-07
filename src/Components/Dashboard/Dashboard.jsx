@@ -1,19 +1,18 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { MdOutlineDelete } from 'react-icons/md';
-import { IoMdMailUnread } from 'react-icons/io';
 import api from '../../utils/api.js';
-import { Routes, Route } from 'react-router-dom';
 import NavAdmin from './NavAdmin.jsx';
+import DataBoard from './DataBoard.jsx';
+import Comment from './Coment.jsx';
+import { Routes, Route } from 'react-router-dom';
+import Message from './Message.jsx';
 const Dashboard = ({ setIsAuthenticated, setUser }) => {
   const [error, setError] = useState('');
   const [users, setUsers] = useState([]);
-  const [coment, setComent] = useState([]);
   const [totalcoment, settotalComent] = useState(0);
   const [totalpesan, settotalPesan] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [Open, setOpen] = useState(false);
+  const [Open, setOpen] = useState(true);
   useEffect(() => {
     const getAll = async () => {
       try {
@@ -26,18 +25,7 @@ const Dashboard = ({ setIsAuthenticated, setUser }) => {
         setLoading(false);
       }
     };
-    const getComent = async () => {
-      try {
-        const res = await api.get('/coment/get');
-        setComent(res.data.data);
-        settotalComent(res.data.data.length);
-        setLoading(false);
-      } catch (err) {
-        setError(err.response?.data?.message || 'gagal ambil coment');
-        setLoading(false);
-      }
-    };
-    getComent();
+
     getAll();
   }, []);
 
@@ -49,19 +37,18 @@ const Dashboard = ({ setIsAuthenticated, setUser }) => {
       setError(err.res?.data?.massage || 'failed delete message');
     }
   };
-  const Deletecoment = async (id) => {
-    try {
-      const res = api.delete(`/coment/${id}`);
-      setComent(coment.filter((komen) => komen.id !== id));
-    } catch (err) {
-      setError(err.res?.data?.massage || 'failed delete coment');
-    }
-  };
 
   if (loading) return <div>Loading....</div>;
   return (
-    <div className="h-screen bg-black">
+    <div className="h-screen bg-black dark:bg-white">
       <NavAdmin setIsAuthenticated={setIsAuthenticated} setUser={setUser} setOpen={setOpen} Open={Open} />
+      <div className={` transition-all duration-300 ease-in-out  ${Open ? 'lg:ml-[255px]' : 'lg:ml-[80px]'}`}>
+        <Routes>
+          <Route index element={<DataBoard />} />
+          <Route path="/komen" element={<Comment />} />
+          <Route path="/pesan" element={<Message />} />
+        </Routes>
+      </div>
     </div>
   );
 };

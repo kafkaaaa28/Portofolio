@@ -79,7 +79,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" element={!isAuthenticated ? <Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} /> : <Navigate to={`/dashboard`} />} />
-        <Route path="/dashboard" element={isAuthenticated ? <Dashboard setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user} /> : <Navigate to={'/'} />} />
+        <Route path="/dashboard/*" element={isAuthenticated ? <Dashboard setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user} /> : <Navigate to={'/'} />} />
         <Route
           path="/coments"
           element={
