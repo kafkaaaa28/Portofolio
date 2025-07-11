@@ -31,16 +31,7 @@
   text-decoration: none;
   white-space: nowrap;
   font-weight: 600;
-  color: #fff;
   font-size: 4vh;
-}
-
-.menu__item-link:hover {
-  color: #060606;
-}
-
-.menu__item-link:focus:not(:focus-visible) {
-  color: #fff;
 }
 
 .marquee {

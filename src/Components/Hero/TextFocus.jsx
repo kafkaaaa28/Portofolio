@@ -58,7 +58,7 @@ const TrueFocus = ({ sentence = 'True Focus', manualMode = false, blurAmount = 5
           <span
             key={index}
             ref={(el) => (wordRefs.current[index] = el)}
-            className={`focus-word ${manualMode ? 'manual' : ''} ${isActive && !manualMode ? 'active' : ''}`}
+            className={`focus-word text-white dark:text-gray-800 ${manualMode ? 'manual' : ''} ${isActive && !manualMode ? 'active' : ''}`}
             style={{
               filter: manualMode ? (isActive ? `blur(0px)` : `blur(${blurAmount}px)`) : isActive ? `blur(0px)` : `blur(${blurAmount}px)`,
               '--border-color': borderColor,

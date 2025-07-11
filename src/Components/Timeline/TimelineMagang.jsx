@@ -8,19 +8,19 @@ export default function Component() {
       <p className="text-center text-white text-[20px] font-bold mb-3">My Experience</p>
       <Timeline>
         <Timeline.Item>
-          <Timeline.Point />
+          <Timeline.Point className="text-white" />
           <Timeline.Content className="Timeline">
-            <Timeline.Time className="text-white">January Until March 2023</Timeline.Time>
-            <Timeline.Title className="text-white">PT Radnet Digital Indonesia</Timeline.Title>
-            <Timeline.Body className="text-white">Jalan Kayu Agung I No. 65A Kel. Turangga, Kec. Lengkong Kota Bandung</Timeline.Body>
+            <Timeline.Time className="text-white dark:text-white">January Until March 2023</Timeline.Time>
+            <Timeline.Title className="text-white ">PT Radnet Digital Indonesia</Timeline.Title>
+            <Timeline.Body className="text-white dark:text-white">Jalan Kayu Agung I No. 65A Kel. Turangga, Kec. Lengkong Kota Bandung</Timeline.Body>
           </Timeline.Content>
         </Timeline.Item>
         <Timeline.Item>
           <Timeline.Point />
           <Timeline.Content className="Timeline">
-            <Timeline.Time className="text-white">August Until October 2023</Timeline.Time>
+            <Timeline.Time className="text-white dark:text-white">August Until October 2023</Timeline.Time>
             <Timeline.Title className="text-white">PT Radnet Digital Indonesia</Timeline.Title>
-            <Timeline.Body className="text-white">Jalan Kayu Agung I No. 65A Kel. Turangga, Kec. Lengkong Kota Bandung</Timeline.Body>
+            <Timeline.Body className="text-white dark:text-white">Jalan Kayu Agung I No. 65A Kel. Turangga, Kec. Lengkong Kota Bandung</Timeline.Body>
           </Timeline.Content>
         </Timeline.Item>
       </Timeline>

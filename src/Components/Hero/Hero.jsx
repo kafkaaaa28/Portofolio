@@ -5,13 +5,13 @@ import TrueFocus from './TextFocus';
 const Hero = () => {
   return (
     <section id="home">
-      <div className="Hero w-full flex flex-col sm:flex-row items-center " style={{ justifyContent: 'space-evenly' }}>
+      <div className="Hero bg-black dark:bg-gray-300 w-full flex flex-col sm:flex-row items-center " style={{ justifyContent: 'space-evenly' }}>
         <div>
           <div className="Text-focus">
             <TrueFocus sentence="Kafka Farel" manualMode={false} blurAmount={5} borderColor="cyan" animationDuration={2} pauseBetweenAnimations={1} />
           </div>
           <div className="flex">
-            <p className="text-white Iam mr-3 font-bold">I am</p>
+            <p className="text-white dark:text-gray-800 Iam mr-3 font-bold">I am</p>
             <RotatingText
               texts={['Creative', 'Front-End', 'Developer', 'Cool!']}
               mainClassName="Rotating  text-black overflow-hidden  justify-center rounded-lg"
@@ -25,7 +25,7 @@ const Hero = () => {
               rotationInterval={2000}
             />
           </div>
-          <p className="Student text-white font-bold text-center mt-4">Student Of Widyatama University</p>
+          <p className="Student text-white  dark:text-gray-800 font-bold text-center mt-4">Student Of Widyatama University</p>
         </div>
         <img src={kafka} className="h-auto img" alt="Kafka" />
       </div>

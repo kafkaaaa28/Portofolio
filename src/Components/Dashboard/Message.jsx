@@ -38,10 +38,10 @@ const Message = () => {
   return (
     <>
       <div className="p-6">
-        <div className="bg-[#191C24] p-6">
+        <div className="bg-[#191C24] dark:bg-[#D1D5DB] p-6">
           <div class="relative overflow-x-auto">
             <table class="w-full text-sm text-left rtl:text-right text-white ">
-              <thead class="text-xs border-b border-gray-600  text-gray-300 uppercase  ">
+              <thead class="text-xs border-b border-gray-600  text-gray-300 dark:bg-[#D1D5DB] dark:text-gray-800 uppercase  ">
                 <tr>
                   <th scope="col" class="px-6 py-3">
                     Email
@@ -59,8 +59,8 @@ const Message = () => {
               </thead>
               <tbody>
                 {message.map((pesan) => (
-                  <tr key={pesan.id} class="bg-[#191C24] border-b  transition-colors ease-in-out hover:bg-black border-gray-600">
-                    <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap ">
+                  <tr key={pesan.id} class="bg-[#191C24] border-b  transition-colors ease-in-out hover:bg-black dark:bg-[#D1D5DB] dark:text-gray-800 border-gray-600 dark:hover:bg-gray-400">
+                    <th scope="row" class="px-6 py-4 font-medium text-white dark:text-gray-800  whitespace-nowrap ">
                       {pesan.email}
                     </th>
                     <td class="px-6 py-4">{pesan.massage}</td>

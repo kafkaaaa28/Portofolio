@@ -11,7 +11,7 @@ const GlitchText = ({ children, speed = 1, enableShadows = true, enableOnHover =
   const hoverClass = enableOnHover ? 'enable-on-hover' : '';
 
   return (
-    <div className={`glitch ${hoverClass} ${className}`} style={inlineStyles} data-text={children}>
+    <div className={`glitch dark:bg-gray-300 ${hoverClass}  ${className}`} style={inlineStyles} data-text={children}>
       {children}
     </div>
   );

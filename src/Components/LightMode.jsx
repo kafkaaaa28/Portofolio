@@ -17,7 +17,7 @@ function DarkModeToggle() {
     <button
       type="button"
       onClick={toggleDarkMode}
-      className="inline-flex items-center h-8 p-2 mr-5 text-md dark:text-gray-800 text-white hover:text-black dark:hover:bg-[#191C24] dark:hover:text-white rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700"
+      className="inline-flex items-center h-8 p-2 mr-5 text-lg border-solid bg-white dark:text-white text-black dark:bg-gray-800 hover:text-white hover:bg-[#191C24] dark:hover:text-gray-800 rounded-lg dark:hover:bg-gray-100 hover:border-white focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700"
       aria-label="Toggle dark mode"
     >
       {!darkMode ? <MdOutlineLightMode /> : <MdDarkMode />}

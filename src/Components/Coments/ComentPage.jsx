@@ -32,20 +32,16 @@ const ComentPage = () => {
   if (loading) return <div className="text-white">loading....</div>;
   return (
     <>
-      <div className="min-h-[120vh]  overflow-hidden">
-        <div className="w-full flex mt-[60px] md:mt-[30px] flex-col justify-center items-center">
+      <div className="min-h-[120vh] bg-black dark:bg-gray-300 overflow-hidden">
+        <div className="w-full flex mt-[60px] md:mt-[40px] flex-col justify-center items-center">
           <button onClick={() => setModalState('opening')} className="cursor-pointer">
-            <Glitch speed={1} enableShadows={true} enableOnHover={true} className="custom-class">
+            <Glitch speed={1} enableShadows={true} enableOnHover={true} className="text-white dark:text-gray-800">
               Comments
             </Glitch>
           </button>
           <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ml-[90px] md:ml-[100px] ">
             {coment.map((komen) => (
-              <SpotlightCard
-                key={komen.id} // Pindahkan key ke komponen paling atas!
-                className="custom-spotlight-card min-h-[200px] mt-[30px] max-w-[300px] text-white"
-                spotlightColor="rgba(0, 229, 255, 0.2)"
-              >
+              <SpotlightCard key={komen.id} className="custom-spotlight-card min-h-[200px] mt-[30px] max-w-[300px] text-white" spotlightColor="rgba(0, 229, 255, 0.2)">
                 <div className="flex flex-col">
                   <p className="text-justify">{komen.coment}</p>
                   <p className="mt-[20px] font-bold text-[20px]">{komen.name}</p>

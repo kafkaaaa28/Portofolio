@@ -71,7 +71,7 @@ function MenuItem({ link, text, image }) {
   return (
     <div className=" menu__item " ref={itemRef}>
       {isRouteLink ? (
-        <Link className="menu__item-link" to={link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <Link className="menu__item-link dark:text-black dark:hover:text-white" to={link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           {text}
         </Link>
       ) : (

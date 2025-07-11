@@ -76,7 +76,7 @@ const GlassIcons = () => {
   };
 
   return (
-    <div className="border-t-2 border-white relative">
+    <div className="border-t-2 border-white dark:border-black relative">
       <div className="grid grid-cols-2 md:grid-cols-3">
         {techItems.map((item) => (
           <a
@@ -84,7 +84,7 @@ const GlassIcons = () => {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="h-[100px] lg:h-[150px] border-r-2 border-b-2 border-white flex items-center justify-center gap-2 text-white font-semibold hover:bg-white hover:text-black transition-colors duration-300 relative cursor-pointer"
+            className="h-[100px] lg:h-[150px] border-r-2 border-b-2 border-white dark:border-black flex items-center justify-center gap-2 text-white dark:text-black font-semibold hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-300 relative cursor-pointer"
             onMouseMove={(e) => handleMouseMove(e, item)}
             onMouseLeave={handleMouseLeave}
           >
@@ -96,7 +96,7 @@ const GlassIcons = () => {
 
       {tooltip.show && tooltip.content && (
         <div
-          className="fixed z-50 w-[300px] flex flex-col px-4 py-2 text-sm text-white bg-white/10 backdrop-blur-md rounded-md shadow-lg pointer-events-none transition duration-150"
+          className="fixed z-50 w-[300px] flex flex-col px-4 py-2 text-sm text-white dark:text-black bg-white/10 backdrop-blur-md rounded-md shadow-lg pointer-events-none transition duration-150"
           style={{
             top: tooltip.y + 15,
             left: tooltip.x + 15,

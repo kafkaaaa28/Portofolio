@@ -6,7 +6,7 @@ import SocialMedia from './SocialMedia';
 import './Contact.css';
 const Contact = () => {
   return (
-    <section id="Contact">
+    <section id="Contact" className="bg-black dark:bg-gray-300">
       <div className="flex flex-col sm:flex-row ">
         <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
         <div className="flex flex-col justify-center items-center  w-full ">

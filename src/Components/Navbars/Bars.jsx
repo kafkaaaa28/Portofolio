@@ -17,10 +17,10 @@ export default function Bars() {
 
   return (
     <>
-      <div className="cursor-pointer hover:text-black hover:bg-white h-[45px] rounded-lg transition-colors p-[10px]">
+      <div className="cursor-pointer hover:text-black hover:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white  h-[45px] rounded-lg transition-colors p-[10px]">
         <FaBarsProgress className="text-2xl " onClick={() => setIsOpen(true)} />
       </div>
-      <Drawer open={isOpen} onClose={handleClose} className=" bg-black text-white">
+      <Drawer open={isOpen} onClose={handleClose} className=" bg-black dark:bg-gray-300 ">
         <Drawer.Header title="Menu" />
         <Drawer.Items>
           <div style={{ height: '600px', position: 'relative' }}>

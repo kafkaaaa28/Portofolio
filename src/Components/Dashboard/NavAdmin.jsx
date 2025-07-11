@@ -137,17 +137,20 @@ const NavAdmin = ({ setIsAuthenticated, setUser, Open, setOpen }) => {
               <img src="https://i.pinimg.com/originals/2d/15/a6/2d15a6815a0cf568b8efaa203ac2571b.jpg" className="w-8 h-8 rounded-lg" />
               {Open || mobile ? (
                 <div className="flex flex-col">
-                  <p className="text-sm text-white">Kafka Farel</p>
-                  <p className="text-sm text-gray-400">Admin</p>
+                  <p className="text-sm text-white dark:text-black">Kafka Farel</p>
+                  <p className="text-sm text-gray-400 dark:text-gray-600">Admin</p>
                 </div>
               ) : null}
             </div>
 
             <ul className="space-y-2 font-medium">
-              {Open || mobile ? <p className="text-gray-400 text-sm">Navigation</p> : null}
+              {Open || mobile ? <p className="text-gray-400 text-sm dark:text-gray-600">Navigation</p> : null}
               <li>
                 <Popover className="bg-[#0F1015] text-[#0F1015]" content={Open || mobile ? null : content} trigger="hover" placement="right">
-                  <a onClick={() => Navigate('/dashboard')} className="flex cursor-pointer text-sm items-center p-2 text-gray-400 rounded-lg hover:bg-[#0F1015] hover:text-white active:bg-[#0F1015] transition-colors duration-300 ease-out">
+                  <a
+                    onClick={() => Navigate('/dashboard')}
+                    className="flex cursor-pointer text-sm items-center p-2 text-gray-400 rounded-lg hover:bg-[#0F1015] hover:text-white dark:text-gray-600 hover:dark:text-white transition-colors duration-300 ease-out"
+                  >
                     <div className="bg-gray-700 shadow-lg flex items-center justify-center w-8 h-8 rounded-lg">
                       <MdSpaceDashboard className="text-lg text-purple-600" />
                     </div>
@@ -157,7 +160,11 @@ const NavAdmin = ({ setIsAuthenticated, setUser, Open, setOpen }) => {
               </li>
               <li>
                 <Popover className="bg-[#0F1015] text-[#0F1015]" content={Open || mobile ? null : home} trigger="hover" placement="right">
-                  <button onClick={() => Navigate('/')} href="#" className="flex w-full text-sm items-center p-2 text-gray-400 rounded-lg hover:bg-[#0F1015] hover:text-white transition-colors duration-300 ease-out">
+                  <button
+                    onClick={() => Navigate('/')}
+                    href="#"
+                    className="flex w-full text-sm items-center p-2 text-gray-400 rounded-lg hover:bg-[#0F1015] hover:text-white  dark:text-gray-600 hover:dark:text-white transition-colors duration-300 ease-out"
+                  >
                     <div className="bg-gray-700 shadow-lg flex items-center justify-center w-8 h-8 rounded-lg">
                       <FaHome className="text-lg text-yellow-300" />
                     </div>
@@ -167,7 +174,11 @@ const NavAdmin = ({ setIsAuthenticated, setUser, Open, setOpen }) => {
               </li>
               <li>
                 <Popover className="bg-[#0F1015] text-[#0F1015]" content={Open || mobile ? null : komen} trigger="hover" placement="right">
-                  <button onClick={() => Navigate('/dashboard/komen')} href="#" className="flex w-full text-sm items-center p-2 text-gray-400 rounded-lg hover:bg-[#0F1015] hover:text-white transition-colors duration-300 ease-out">
+                  <button
+                    onClick={() => Navigate('/dashboard/komen')}
+                    href="#"
+                    className="flex w-full text-sm items-center p-2 text-gray-400 rounded-lg hover:bg-[#0F1015] hover:text-white dark:text-gray-600 hover:dark:text-white  transition-colors duration-300 ease-out"
+                  >
                     <div className="bg-gray-700 shadow-lg flex items-center justify-center w-8 h-8 rounded-lg">
                       <FaComments className="text-lg text-blue-400" />
                     </div>
@@ -177,7 +188,11 @@ const NavAdmin = ({ setIsAuthenticated, setUser, Open, setOpen }) => {
               </li>
               <li>
                 <Popover className="bg-[#0F1015] text-[#0F1015]" content={Open || mobile ? null : pesan} trigger="hover" placement="right">
-                  <button onClick={() => Navigate('/dashboard/pesan')} href="#" className="flex w-full text-sm items-center p-2 text-gray-400 rounded-lg hover:bg-[#0F1015] hover:text-white transition-colors duration-300 ease-out">
+                  <button
+                    onClick={() => Navigate('/dashboard/pesan')}
+                    href="#"
+                    className="flex w-full text-sm items-center p-2 text-gray-400 rounded-lg hover:bg-[#0F1015] hover:text-white dark:text-gray-600 hover:dark:text-white  transition-colors duration-300 ease-out"
+                  >
                     <div className="bg-gray-700 shadow-lg flex items-center justify-center w-8 h-8 rounded-lg">
                       <RiMessage3Fill className="text-lg text-green-400" />
                     </div>

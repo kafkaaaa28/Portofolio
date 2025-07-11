@@ -92,7 +92,7 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="bg-black">
+            <div className="">
               <>
                 <ScrollLinked />
                 <Navbars setIsAuthenticated={setIsAuthenticated} setUser={setUser} isAuthenticated={isAuthenticated} />

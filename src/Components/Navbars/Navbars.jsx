@@ -5,6 +5,7 @@ import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'flowbite-rea
 import { FaRegQuestionCircle } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import './Navbars.css';
+import LightMode from '../LightMode.jsx';
 import api from '../../utils/api.js';
 
 export default function Navbars({ setIsAuthenticated, setUser, isAuthenticated }) {
@@ -42,14 +43,19 @@ export default function Navbars({ setIsAuthenticated, setUser, isAuthenticated }
   };
   return (
     <>
-      <Navbar fluid className="fixed z-40 w-full bg-black text-white">
+      <Navbar fluid className="fixed z-40 w-full bg-black dark:bg-gray-300 dark:text-gray-800 text-white">
         <div className=" w-full mt-[20px]  flex justify-between">
           <Link to={'/'}>
             <Navbar.Brand>
-              <span className="text-2xl font-semibold dark:text-white">Kafka</span>
+              <span className="text-2xl font-semibold dark:text-gray-800">Kafka</span>
             </Navbar.Brand>
           </Link>
+
           <div className="flex gap-5">
+            <div className="flex items-center justify-center">
+              <LightMode />
+            </div>
+
             {isAuthenticated ? (
               <>
                 <button

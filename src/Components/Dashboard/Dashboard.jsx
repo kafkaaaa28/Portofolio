@@ -7,38 +7,8 @@ import Comment from './Coment.jsx';
 import { Routes, Route } from 'react-router-dom';
 import Message from './Message.jsx';
 const Dashboard = ({ setIsAuthenticated, setUser }) => {
-  const [error, setError] = useState('');
-  const [users, setUsers] = useState([]);
-  const [totalcoment, settotalComent] = useState(0);
-  const [totalpesan, settotalPesan] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [Open, setOpen] = useState(true);
-  useEffect(() => {
-    const getAll = async () => {
-      try {
-        const res = await api.get('/pesan/all');
-        setUsers(res.data.data);
-        settotalPesan(res.data.data.length);
-        setLoading(false);
-      } catch (err) {
-        setError(err.response?.data?.message || 'gagal ambil data');
-        setLoading(false);
-      }
-    };
 
-    getAll();
-  }, []);
-
-  const handledelete = async (id) => {
-    try {
-      const res = api.delete(`/pesan/${id}`);
-      setUsers(users.filter((user) => user.id !== id));
-    } catch (err) {
-      setError(err.res?.data?.massage || 'failed delete message');
-    }
-  };
-
-  if (loading) return <div>Loading....</div>;
   return (
     <div className="h-screen bg-black dark:bg-white">
       <NavAdmin setIsAuthenticated={setIsAuthenticated} setUser={setUser} setOpen={setOpen} Open={Open} />
