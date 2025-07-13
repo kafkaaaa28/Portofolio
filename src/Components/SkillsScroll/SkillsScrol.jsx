@@ -71,7 +71,7 @@ const SkillsScrol = () => {
   ];
 
   return (
-    <div className="flex gap-5 bg-black dark:bg-gray-300">
+    <div className="flex gap-5  bg-black  dark:bg-gray-300">
       {items.map((item, index) => (
         <BorderSkills as="button" className="" color="red" speed="5s">
           <div key={index} className="flex flex-col rounded-lg p-3  w-[200px]" style={{ background: item.Background }}>

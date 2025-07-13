@@ -29,7 +29,7 @@ const Login = ({ setIsAuthenticated, setUser }) => {
   };
   return (
     <>
-      <div className="h-screen flex flex-col justify-center items-center bg-black">
+      <div className="h-screen flex flex-col justify-center items-center bg-black dark:bg-gray-300">
         <button
           type="button"
           onClick={() => {
@@ -45,7 +45,7 @@ const Login = ({ setIsAuthenticated, setUser }) => {
         <div className="bg-white w-[350px] h-[300px] flex flex-col items-center justify-center rounded-lg">
           <form onSubmit={handeLogin} className="max-w-sm mx-auto">
             <div className="mb-5">
-              <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label for="email" className="block mb-2 text-sm font-medium text-gray-900 ">
                 email
               </label>
               <input
@@ -60,7 +60,7 @@ const Login = ({ setIsAuthenticated, setUser }) => {
               />
             </div>
             <div className="mb-5">
-              <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label for="password" className="block mb-2 text-sm font-medium text-gray-900 ">
                 password
               </label>
               <input
