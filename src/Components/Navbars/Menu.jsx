@@ -3,25 +3,25 @@ import { gsap } from 'gsap';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link } from 'react-router-dom';
 import './Navbars.css';
-function FlowingMenu({ items = [] }) {
+import { useEffect } from 'react';
+function FlowingMenu({ items = [], isAuthenticated, Logout }) {
   return (
     <div className="menu-wrap">
       <nav className="menu">
         {items.map((item, idx) => (
-          <MenuItem key={idx} {...item} />
+          <MenuItem key={idx} {...item} isAuthenticated={isAuthenticated} Logout={Logout} />
         ))}
       </nav>
     </div>
   );
 }
 
-function MenuItem({ link, text, image }) {
+function MenuItem({ link, text, image, isAuthenticated, Logout, isLogout }) {
   const itemRef = React.useRef(null);
   const marqueeRef = React.useRef(null);
   const marqueeInnerRef = React.useRef(null);
   const isRouteLink = link.startsWith('/');
   const animationDefaults = { duration: 0.6, ease: 'expo' };
-
   const findClosestEdge = (mouseX, mouseY, width, height) => {
     const topEdgeDist = distMetric(mouseX, mouseY, width / 2, 0);
     const bottomEdgeDist = distMetric(mouseX, mouseY, width / 2, height);
@@ -69,8 +69,14 @@ function MenuItem({ link, text, image }) {
   ));
 
   return (
-    <div className=" menu__item " ref={itemRef}>
-      {isRouteLink ? (
+    <div className="menu__item" ref={itemRef}>
+      {isLogout ? (
+        <>
+          <button className="menu__item-link ml-[90px] dark:text-black dark:hover:text-white" onClick={Logout} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            Logout
+          </button>
+        </>
+      ) : isRouteLink && !isAuthenticated ? (
         <Link className="menu__item-link dark:text-black dark:hover:text-white" to={link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           {text}
         </Link>
@@ -79,6 +85,7 @@ function MenuItem({ link, text, image }) {
           {text}
         </ScrollLink>
       )}
+
       <div className="marquee" ref={marqueeRef}>
         <div className="marquee__inner-wrap" ref={marqueeInnerRef}>
           <div className="marquee__inner" aria-hidden="true">

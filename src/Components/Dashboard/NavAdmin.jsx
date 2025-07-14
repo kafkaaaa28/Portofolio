@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaHome, FaComments } from 'react-icons/fa';
 import { HiOutlineLogout } from 'react-icons/hi';
-import api from '../../utils/api.js';
 import { MdSpaceDashboard } from 'react-icons/md';
 import { FaBarsStaggered } from 'react-icons/fa6';
 import { RiMessage3Fill } from 'react-icons/ri';
@@ -14,7 +13,6 @@ const NavAdmin = ({ setIsAuthenticated, setUser, Open, setOpen }) => {
   const [mobile, setMobile] = useState(false);
   const handleLogout = async () => {
     try {
-      await api.post('/auth/logout');
       setIsAuthenticated(false);
       localStorage.removeItem('token');
       setUser(false);
@@ -85,6 +83,7 @@ const NavAdmin = ({ setIsAuthenticated, setUser, Open, setOpen }) => {
       <div className="flex justify-end lg:justify-start items-center  bg-[#191C24] dark:bg-gray-300 py-2 w-full h-[60px]">
         {mobile ? (
           <>
+            <LightMode />
             <div className="flex mr-3 gap-3 items-center">
               <img src={kafka} className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" />
               <p className="text-white">Kafka Farel</p>

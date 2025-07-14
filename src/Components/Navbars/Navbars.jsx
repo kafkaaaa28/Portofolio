@@ -14,28 +14,27 @@ export default function Navbars({ setIsAuthenticated, setUser, isAuthenticated }
   const [error, setError] = useState('');
   const location = useLocation();
   const islocation = location.pathname === '/coments';
+  const ceklogin = async () => {
+    try {
+      const res = await api.get('/auth/me');
+      setIsAuthenticated(true);
+      setUser(res.data);
+    } catch (err) {
+      setError(err.res?.data?.message || 'gagal ambil data');
+      setIsAuthenticated(false);
+    }
+  };
   useEffect(() => {
-    const ceklogin = async () => {
-      try {
-        const res = await api.get('/auth/me');
-        setIsAuthenticated(true);
-        setUser(res.data);
-      } catch (err) {
-        setError(err.res?.data?.message || 'gagal ambil data');
-        setIsAuthenticated(false);
-      }
-    };
     ceklogin();
   }, []);
   const Navigate = useNavigate();
   const handleLogout = async () => {
     try {
-      const res = api.post('/auth/logout');
       setIsAuthenticated(false);
       localStorage.removeItem('token');
       setUser(false);
       setTimeout(() => {
-        Navigate('/');
+        Navigate('/login');
       }, 1000);
     } catch (error) {
       console.error('logout failed', error);
@@ -45,7 +44,7 @@ export default function Navbars({ setIsAuthenticated, setUser, isAuthenticated }
     <>
       <Navbar fluid className="fixed z-40 w-full bg-black dark:bg-gray-300 dark:text-gray-800 text-white">
         <div className=" w-full mt-[20px]  flex justify-between">
-          <Link to={'/'}>
+          <Link to={isAuthenticated ? '/dashboard' : '/'}>
             <Navbar.Brand>
               <span className="text-2xl font-semibold dark:text-gray-800">Kafka</span>
             </Navbar.Brand>
@@ -56,21 +55,7 @@ export default function Navbars({ setIsAuthenticated, setUser, isAuthenticated }
               <LightMode />
             </div>
 
-            {isAuthenticated ? (
-              <>
-                <button
-                  type="button"
-                  onClick={handleLogout}
-                  className="text-black bg-white hover:bg-black hover:text-white border hover:ring-white hover:border-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "
-                >
-                  Logout
-                </button>
-                <Link to={'/dashboard'}>
-                  <p>Dashboard</p>
-                </Link>
-              </>
-            ) : null}
-            {islocation ? <FaRegQuestionCircle className="text-[30px] cursor-pointer" onClick={() => setOpenModal(true)} /> : <Bars />}
+            {islocation ? <FaRegQuestionCircle className="text-[30px] cursor-pointer" onClick={() => setOpenModal(true)} /> : <Bars isAuthenticated={isAuthenticated} handleLogout={handleLogout} />}
           </div>
         </div>
       </Navbar>
