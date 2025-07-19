@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 import api from '../../utils/api';
+import { Spinner } from 'flowbite-react';
+
 import DeleteMessage from './DeleteMessage';
 const Message = () => {
   const [message, setMessage] = useState([]);
   const [selectedMessage, setSelectedMessage] = useState(null);
   const [OpenModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [fetchMessage, setfetchMessage] = useState(true);
   const getMessage = async () => {
     try {
       const res = await api.get('/pesan/all');
+      setfetchMessage(false);
       setMessage(res.data.data);
     } catch (err) {
+      setfetchMessage(false);
       console.log(err.response?.data?.message || 'gagal ambil pesan');
     }
   };
@@ -58,32 +63,38 @@ const Message = () => {
                 </tr>
               </thead>
               <tbody>
-                {message.map((pesan) => (
-                  <tr key={pesan.id} class="bg-[#191C24] border-b  transition-colors ease-in-out hover:bg-black dark:bg-[#D1D5DB] dark:text-gray-800 border-gray-600 dark:hover:bg-gray-400">
-                    <th scope="row" class="px-6 py-4 font-medium text-white dark:text-gray-800  whitespace-nowrap ">
-                      {pesan.email}
-                    </th>
-                    <td class="px-6 py-4">{pesan.massage}</td>
-                    <td class="px-6 py-4">
-                      {pesan.created_at
-                        ? new Date(pesan.created_at).toLocaleString('id-ID', {
-                            day: '2-digit',
-                            month: 'long',
-                            year: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit',
-                            hour12: false,
-                          })
-                        : 'Tidak tersedia'}
-                    </td>
+                {fetchMessage ? (
+                  <th scope="col" colspan="4" class="px-6 py-3  text-center">
+                    <Spinner color="info" aria-label="Info spinner example" />
+                  </th>
+                ) : (
+                  message.map((pesan) => (
+                    <tr key={pesan.id} class="bg-[#191C24] border-b  transition-colors ease-in-out hover:bg-black dark:bg-[#D1D5DB] dark:text-gray-800 border-gray-600 dark:hover:bg-gray-400">
+                      <th scope="row" class="px-6 py-4 font-medium text-white dark:text-gray-800  whitespace-nowrap ">
+                        {pesan.email}
+                      </th>
+                      <td class="px-6 py-4">{pesan.massage}</td>
+                      <td class="px-6 py-4">
+                        {pesan.created_at
+                          ? new Date(pesan.created_at).toLocaleString('id-ID', {
+                              day: '2-digit',
+                              month: 'long',
+                              year: 'numeric',
+                              hour: '2-digit',
+                              minute: '2-digit',
+                              hour12: false,
+                            })
+                          : 'Tidak tersedia'}
+                      </td>
 
-                    <td class="px-6 py-4">
-                      <button type="button" onClick={() => handleDelete(pesan)} class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">
-                        <AiFillDelete />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
+                      <td class="px-6 py-4">
+                        <button type="button" onClick={() => handleDelete(pesan)} class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">
+                          <AiFillDelete />
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           </div>

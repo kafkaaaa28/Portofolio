@@ -9,18 +9,19 @@ const GithubContributions = () => {
           <div className="bg-[#28272A] rounded-lg h-[150px] w-[360px] sm:w-[750px] overflow-x-auto wrapper ">
             <div className="w-[705px] mt-[13px]">
               <div className="flex">
-                <p className="text-white text-[10px] ml-[65px]">Jul</p>
-                <p className="text-white text-[10px] ml-[30px]">Aug</p>
-                <p className="text-white text-[10px] ml-[30px]">Sep</p>
-                <p className="text-white text-[10px] ml-[25px]">Oct</p>
-                <p className="text-white text-[10px] ml-[25px]">Nov</p>
+                <p className="text-white text-[10px] ml-[62px]">Jul</p>
+                <p className="text-white text-[10px] ml-[25px]">Aug</p>
+                <p className="text-white text-[10px] ml-[25px]">Sep</p>
+                <p className="text-white text-[10px] ml-[42px]">Oct</p>
+                <p className="text-white text-[10px] ml-[30px]">Nov</p>
                 <p className="text-white text-[10px] ml-[27px]">Dec</p>
-                <p className="text-white text-[10px] ml-[39px]">Jan</p>
+                <p className="text-white text-[10px] ml-[42px]">Jan</p>
                 <p className="text-white text-[10px] ml-[30px]">Feb</p>
                 <p className="text-white text-[10px] ml-[30px]">Mar</p>
                 <p className="text-white text-[10px] ml-[43px]">Apr</p>
                 <p className="text-white text-[10px] ml-[40px]">May</p>
-                <p className="text-white text-[10px] ml-[40px]">Jun</p>
+                <p className="text-white text-[10px] ml-[30px]">Jun</p>
+                <p className="text-white text-[10px] ml-[30px]">Jul</p>
               </div>
               <div className="flex">
                 <div className="flex flex-col ml-[20px] mr-[20px] gap-[15px]">

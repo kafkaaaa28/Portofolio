@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Login = ({ setIsAuthenticated, setUser }) => {
   const [formData, setformData] = useState({ email: '', password: '' });
   const [Error, setErr] = useState('');
+  const [loading, setLoading] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const { email, password } = formData;
   const onChange = (e) => {
@@ -15,15 +16,18 @@ const Login = ({ setIsAuthenticated, setUser }) => {
   const navigate = useNavigate();
   const handeLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const res = await api.post('/auth/login', formData);
       localStorage.setItem('token', res.data.token);
       setIsAuthenticated(true);
+      setLoading(false);
       setUser(res.data.admin);
       navigate('/dashboard');
     } catch (err) {
       setOpenModal(true);
       console.error('Login error:', err.response?.data || err.message);
+      setLoading(false);
       setErr(err.response?.data?.message || 'gagal Login');
     }
   };
@@ -79,7 +83,7 @@ const Login = ({ setIsAuthenticated, setUser }) => {
              focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 
              transition duration-300 ease-in-out"
             >
-              Login
+              {loading ? 'Loading...' : 'Login'}
             </button>
           </form>
         </div>
